@@ -14,6 +14,7 @@ var Box = React.createClass({
 		};
 	},
 
+/*
 	componentWillMount: function() { 
 		var currentState = this; 
 		this.timer = setInterval(function(){ 
@@ -22,11 +23,16 @@ var Box = React.createClass({
 			currentState.setState({value: newValue}); 
 		},300); 
 	},
+*/
+	handleClick: function() {
+		var oldValue = this.state.value;
+		this.setState({value: this.state.value = oldValue == 'X' ? 'O' : 'X'});    
+  },
 
 
   'render': function onRender () {
 	return (
-	  <button style={boxStyle} >{this.state.value}</button>
+	  <button style={boxStyle} onClick={this.handleClick} >{this.state.value}</button>
     );
   }
 });
