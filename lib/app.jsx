@@ -42,18 +42,32 @@ var Box = React.createClass({
 var Row = React.createClass({
 	getInitialState: function(){
 		return{
-			value: this.props.initialValue
+			//value: this.props.initialValue
+			return {boxRow : ['-','-','-']};
 		};
 	},
 
 	'render': function onRender () {
-	return (
+
+		var box = this.state.boxRow.map(function(value,index){
+
+		return (
+		<Box value={value} key={index} rowIndex={index} />
+		);
+
+		});
+
+		return( <ul> {box} </ul> );
+
+
+
+	/*return (
 		<ul>
 -      	<Box initialValue=" "/>
 -      	<Box initialValue=" "/>
 -      	<Box initialValue=" "/>
 -      </ul>
-    );
+    );*/
   }
 
 
