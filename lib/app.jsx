@@ -14,6 +14,16 @@ var Box = React.createClass({
 		};
 	},
 
+	componentWillMount: function() { 
+		var currentState = this; 
+		this.timer = setInterval(function(){ 
+			var oldValue = currentState.state.value; 
+			var newValue = oldValue == 'X' ? 'O' : 'X'; 
+			currentState.setState({value: newValue}); 
+		},300); 
+	},
+
+
   'render': function onRender () {
 	return (
 	  <button style={boxStyle} >{this.state.value}</button>
