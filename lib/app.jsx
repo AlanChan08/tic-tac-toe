@@ -8,10 +8,10 @@ var Box = React.createClass({
    * @return {ReactElement}
    */
   'render': function onRender () {
-    return (
-      <button>X</button>
+	return (
+	  <button>{this.props.value}</button>
     );
   }
 });
 
-React.render(<Box/>, document.body);
+React.render(<Box value = 'X'/>, document.body);
